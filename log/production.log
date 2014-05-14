@@ -1,0 +1,27 @@
+# Logfile created on 2014-05-09 15:14:45 -0500 by logger.rb/44203
+I, [2014-05-09T15:14:45.657455 #3853]  INFO -- : Executing: CREATE TABLE car (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50)) with: []
+I, [2014-05-09T15:14:45.668724 #3853]  INFO -- : Executing: CREATE TABLE buyer (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50)) with: []
+I, [2014-05-09T15:14:45.674846 #3853]  INFO -- : Executing: CREATE TABLE lot (id INTEGER PRIMARY KEY AUTOINCREMENT, buyer_id INTEGER, lot_id INTEGER, car_id INTEGER) with: []
+I, [2014-05-14T05:34:00.500268 #4653]  INFO -- : Executing: Select * from buyer where name = ?; with: Joe
+I, [2014-05-14T05:34:00.501413 #4653]  INFO -- : Executing: Insert into buyer (name) values (?); with: Joe
+I, [2014-05-14T05:34:00.513802 #4653]  INFO -- : Executing: SELECT last_insert_rowid(); with: []
+I, [2014-05-14T05:35:41.962956 #4657]  INFO -- : Executing: Select * from car where name = ?; with: ZHWUR1ZD4ELA02188
+I, [2014-05-14T05:35:41.963456 #4657]  INFO -- : Executing: Insert into car (name) values (?); with: ZHWUR1ZD4ELA02188
+I, [2014-05-14T05:35:41.978595 #4657]  INFO -- : Executing: SELECT last_insert_rowid(); with: []
+I, [2014-05-14T05:37:41.152855 #4666]  INFO -- : Executing: Select * from buyer where name = ?; with: John Doe
+I, [2014-05-14T05:37:41.153787 #4666]  INFO -- : Executing: Insert into buyer (name) values (?); with: John Doe
+I, [2014-05-14T05:37:41.164760 #4666]  INFO -- : Executing: SELECT last_insert_rowid(); with: []
+I, [2014-05-14T05:48:14.460411 #4701]  INFO -- : Executing: Select * from buyer where name = ?; with: Donald Sterling098098098
+I, [2014-05-14T05:48:14.461224 #4701]  INFO -- : Executing: Insert into buyer (name) values (?); with: Donald Sterling098098098
+I, [2014-05-14T05:48:14.474474 #4701]  INFO -- : Executing: SELECT last_insert_rowid(); with: []
+I, [2014-05-14T05:53:34.153027 #4716]  INFO -- : Executing: Select * from buyer where name = ?; with: 999
+I, [2014-05-14T05:53:54.471516 #4716]  INFO -- : Executing: Select * from buyer where name = ?; with: Herbert Coldpeppers
+I, [2014-05-14T05:53:54.471907 #4716]  INFO -- : Executing: Insert into buyer (name) values (?); with: Herbert Coldpeppers
+I, [2014-05-14T05:53:54.484827 #4716]  INFO -- : Executing: SELECT last_insert_rowid(); with: []
+I, [2014-05-14T05:54:34.672918 #4718]  INFO -- : Executing: Select * from buyer where name = ?; with: Herbert Coldpeppers
+I, [2014-05-14T05:56:25.839940 #4718]  INFO -- : Executing: Select * from buyer where name = ?; with: Herbert Coldpeppers II
+I, [2014-05-14T05:56:25.840338 #4718]  INFO -- : Executing: Insert into buyer (name) values (?); with: Herbert Coldpeppers II
+I, [2014-05-14T05:56:25.852592 #4718]  INFO -- : Executing: SELECT last_insert_rowid(); with: []
+I, [2014-05-14T05:56:41.912969 #4720]  INFO -- : Executing: Select * from car where name = ?; with: 999
+I, [2014-05-14T05:56:41.913735 #4720]  INFO -- : Executing: Insert into car (name) values (?); with: 999
+I, [2014-05-14T05:56:41.926737 #4720]  INFO -- : Executing: SELECT last_insert_rowid(); with: []
