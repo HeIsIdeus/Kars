@@ -1,0 +1,99 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH << "lib"
+$LOAD_PATH << "models"
+
+require 'environment'
+Environment.environment = ENV["ENVIRONMENT"] || "production"
+$stderr = $stdout
+
+require 'buyer'
+require 'car'
+
+def menu
+<<EOS
+What do you want to do?
+1. Add Buyer
+2. Add Car to inventory
+3. Delete Car from inventory
+4. Exit
+EOS
+end
+
+def delete_car
+  puts "Enter the 17 character VIN to delete vehicle."
+  car_name = gets
+  return unless car_name
+  car_name.chomp!
+  car = Car.delete(car_name)
+  if car.delete
+      puts "'#{car_name}' has been deleted."
+  else
+    puts "'#{car_name}' is an invalid entry. Please double check the 17 character VIN you entered."
+    delete_car
+  end
+end
+
+def add_buyer
+  puts "Who do you want to add?"
+  buyer_name = gets
+  return unless buyer_name
+  buyer_name.chomp!
+  buyer = Buyer.new(buyer_name)
+  if buyer.save
+    puts "#{buyer.name} has been added."
+  else
+    puts buyer.errors
+    add_buyer
+  end
+end
+
+def add_car
+  puts "What is the car you want to add?"
+  car_name = gets
+  return unless car_name
+  car_name.chomp!
+  car = Car.new(car_name)
+  if car.save
+    puts "#{car_name} has been added."
+  else
+    puts car.errors
+    add_car
+  end
+end
+=begin
+def update_inventory
+  puts find_car
+  input = gets
+  return unless input
+  input.chomp!
+  if input == "1"
+    puts "What car would you like to search for (VIN#)?"
+    name = gets
+    car = Car.find_by_name(name)
+    puts car
+  elsif input == "2"
+    get_menu_selection
+  else
+    puts "'#{input}' is not a valid selection"
+    update_inventory
+  end
+=end
+def get_menu_selection
+  puts menu
+  input = gets
+  return unless input
+  input.chomp!
+  if input == "1"
+    add_buyer
+  elsif input == "2"
+    add_car
+  elsif input == "3"
+    delete_car
+  else
+    puts "'#{input}' is not a valid selection"
+    get_menu_selection
+  end
+end
+
+get_menu_selection
